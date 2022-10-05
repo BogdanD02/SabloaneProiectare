@@ -29,5 +29,5 @@ jobs:
     - name: Publishing executables
       uses: actions/upload-artifact@master
       with:
-        name: Documentation
+        name: Executables
         path: ${{github.workspace}}/bin
