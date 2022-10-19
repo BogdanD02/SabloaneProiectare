@@ -15,14 +15,18 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <BookContents/Chapter.hpp>
+#include <BookContents/TableOfContents.hpp>
+#include <Author.hpp>
 
 class Book
 {
 private:
     std::string _title;
-    std::vector < std::string > _paragraphs;
-    std::vector < std::string > _images;
-    std::vector < std::string > _tables;
+    std::vector <Chapter> chapters;
+    std::vector <Author> authors;
+
+    TableOfContents* tableOfContents;
 
     void printUnderlined(std::string message);
 
@@ -35,25 +39,43 @@ public:
     Book(std::string title);
 
     /**
-     * @brief Adds a new paragraph to the book
+     * @brief Adds a new Author to the book
      * 
-     * @param text The paragraph's text
      */
-    void createNewParagraph(std::string text);
-    
-    /**
-     * @brief Adds a new image to the book
-     * 
-     * @param path The path to the image
-     */
-    void createNewImage(std::string path);
+    void addAuthor( const Author& );
 
     /**
-     * @brief Adds a new table to the book
+     * @brief Creates a new empty chapter
      * 
-     * @param title The name of the table
+     * @param name The name of the chapter
+     * 
+     * @return int 
+     * @retval The index of the chapter
      */
-    void createNewTable(std::string title);
+    int createChapter( const std::string& );
+
+    /**
+     * @brief Gets a chapter
+     * 
+     * @param index The index of the chapter
+     * 
+     * @return Chapter* 
+     * @retval NULL Invalid index
+     */
+    Chapter* getChapter() const;
+
+    /**
+     * @brief Creates a new table of contents for this book
+     * 
+     */
+    void AddTableOfContents();
+
+    /**
+     * @brief Returns the table of contents
+     * 
+     * @return TableOfContents* 
+     */
+    TableOfContents* getTableOfContents() const;
 
     /**
      * @brief Prints the book's content
