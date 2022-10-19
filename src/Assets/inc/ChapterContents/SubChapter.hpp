@@ -14,18 +14,15 @@
 // Including dependencies
 #include <string>
 #include <vector>
-#include <ChapterContents/Image.hpp>
-#include <ChapterContents/Paragraph.hpp>
-#include <ChapterContents/Table.hpp>
+#include <Elements/Image.hpp>
+#include <Elements/Paragraph.hpp>
+#include <Elements/Table.hpp>
 
 class SubChapter
 {
 private:
     std::string name;
-    std::vector <Image> images;
-    std::vector <Paragraph> paragraphs;
-    std::vector <Table> tables;
-
+    std::vector <Element*> elements;
 public:
     /**
      * @brief Destructor

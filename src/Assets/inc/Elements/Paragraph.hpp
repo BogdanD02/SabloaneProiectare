@@ -12,9 +12,9 @@
 #pragma once
 
 // Including dependencies
-#include <string>
+#include <ChapterContents/Element.hpp>
 
-class Paragraph
+class Paragraph : public Element
 {
 private:
     std::string name;

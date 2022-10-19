@@ -13,6 +13,7 @@
 
 // Including dependencies
 #include <string>
+#include <iostream>
 
 class Author
 {

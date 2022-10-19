@@ -1,7 +1,7 @@
 /**
- * @file Image.hpp
+ * @file Table.hpp
  * @author David Bogdan (david.bnicolae@gmail.com)
- * @brief Definition of the Image class
+ * @brief Definition of the Table class
  * @version 0.1
  * @date 2022-10-19
  * 
@@ -12,9 +12,9 @@
 #pragma once
 
 // Including dependencies
-#include <string>
+#include <ChapterContents/Element.hpp>
 
-class Image
+class Table : public Element
 {
 private:
     std::string name;
@@ -24,25 +24,25 @@ public:
      * @brief Destructor
      * 
      */
-    ~Image() = default;
+    ~Table() = default;
 
     /**
      * @brief Constructor
      * 
      * @param name The name of the author
      */
-    Image( const std::string& );
+    Table( const std::string& );
 
     // Block other forms of construction
 
-    Image() = delete;
-    Image( const Image& ) = delete;
-    Image* operator= ( const Image& ) = delete;
+    Table() = delete;
+    Table( const Table& ) = delete;
+    Table* operator= ( const Table& ) = delete;
 
     // ----- METHODS -----
 
     /**
-     * @brief Prints the image
+     * @brief Prints the table
      * 
      */
     void print();
