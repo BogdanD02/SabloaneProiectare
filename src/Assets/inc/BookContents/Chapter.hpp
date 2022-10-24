@@ -20,7 +20,7 @@ class Chapter
 {
 private:
     std::string name;
-    std::vector < SubChapter > subChapters;
+    std::vector < SubChapter* > subChapters;
 
 public:
     /**
@@ -48,15 +48,17 @@ public:
      * @brief Prints the chapter
      * 
      */
-    void print();
+    void print() const;
 
     /**
      * @brief Creates a new empty subChapter
      * 
+     * @param name The name of the subchapter
+     * 
      * @return int
      * @retval The index of the SubChapter 
      */
-    int createSubChapter();
+    int createSubChapter( const std::string& );
 
     /**
      * @brief Returns a sub chapter
@@ -66,5 +68,5 @@ public:
      * @return SubChapter* 
      * @retval NULL Invalid index
      */
-    SubChapter* getSubChapter( const unsigned& ) const;
+    SubChapter* getSubChapter( const unsigned& );
 };

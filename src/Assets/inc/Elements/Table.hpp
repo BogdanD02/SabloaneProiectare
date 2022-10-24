@@ -45,5 +45,5 @@ public:
      * @brief Prints the table
      * 
      */
-    void print();
+    void print() const;
 };

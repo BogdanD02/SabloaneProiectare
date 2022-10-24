@@ -42,5 +42,5 @@ public:
 
     // ----- METHODS -----
 
-    void print();
+    void print() const;
 };

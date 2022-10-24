@@ -28,7 +28,7 @@ public:
      * @brief Destructor
      * 
      */
-    ~SubChapter() = default;
+    ~SubChapter();
 
     /**
      * @brief Constructor
@@ -49,7 +49,7 @@ public:
      * @brief Prints the subchapter
      * 
      */
-    void print();
+    void print() const;
 
     /**
      * @brief Creates a new empty image
@@ -89,7 +89,7 @@ public:
      * @return Image* 
      * @retval NULL invalid index
      */
-    Image* getImage( const unsigned& ) const;
+    Image* getImage( const unsigned& );
 
     /**
      * @brief Gets a table
@@ -99,7 +99,7 @@ public:
      * @return Table* 
      * @retval NULL invalid index
      */
-    Table* getTable( const unsigned& ) const;
+    Table* getTable( const unsigned& );
 
     /**
      * @brief Gets an paragraph
@@ -109,6 +109,6 @@ public:
      * @return Paragraph* 
      * @retval NULL invalid index
      */
-    Paragraph* getParagraph( const unsigned& ) const;
+    Paragraph* getParagraph( const unsigned& );
 
 };

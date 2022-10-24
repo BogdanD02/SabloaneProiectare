@@ -45,5 +45,5 @@ public:
      * @brief Prints the paragraph
      * 
      */
-    void print();
+    void print() const;
 };

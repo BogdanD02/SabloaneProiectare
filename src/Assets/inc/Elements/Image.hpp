@@ -45,5 +45,5 @@ public:
      * @brief Prints the image
      * 
      */
-    void print();
+    void print() const;
 };

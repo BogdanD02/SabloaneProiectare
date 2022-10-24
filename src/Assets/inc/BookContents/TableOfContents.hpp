@@ -12,8 +12,11 @@
 #pragma once
 
 // Including dependencies
-#include <string>
+#include <iostream>
 #include <Book.hpp>
+
+// Stub book
+class Book;
 
 class TableOfContents
 {
@@ -32,7 +35,9 @@ public:
      * 
      * @param book The book containing the table of contents
      */
-    TableOfContents( const Book* );
+    TableOfContents( Book* linkedBook) {
+        this->book = linkedBook;
+    }
 
     // Block other forms of construction
 
@@ -46,5 +51,5 @@ public:
      * @brief Prints the table of contents
      * 
      */
-    void print();
+    void print() const;
 };

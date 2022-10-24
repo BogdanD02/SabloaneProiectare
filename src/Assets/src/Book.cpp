@@ -16,7 +16,7 @@ Book::Book(std::string title)
     _title = title;
 }
 
-void Book::printUnderlined(std::string message)
+void Book::printUnderlined(std::string message) const
 {
     std::cout << message << "\n";
 
@@ -27,9 +27,54 @@ void Book::printUnderlined(std::string message)
     std::cout << "\n";
 }
 
-void Book::print()
+void Book::addAuthor( Author*& author )
+{
+    authors.push_back(author);
+}
+
+int Book::createChapter( const std::string& name )
+{
+    chapters.push_back( new Chapter(name) );
+
+    return chapters.size() - 1;
+}
+
+Chapter* Book::getChapter( const unsigned& index )
+{
+    if(index < chapters.size())
+        return chapters.at(index);
+
+    return nullptr;
+}
+
+void Book::AddTableOfContents()
+{
+    tableOfContents = new TableOfContents(this);
+}
+
+TableOfContents* Book::getTableOfContents() const
+{
+    return tableOfContents;
+}
+
+void Book::print() const
 {
     printUnderlined(_title);
+    std::cout << "\nAuthors: ";
 
-    std::cout << "\n";
+    for(auto iter = authors.begin(); iter < authors.end(); iter++)
+    {
+        (*iter)->print();
+
+        if(iter + 1 != authors.end())
+        {
+            std::cout << ", ";
+        }
+    }
+    std::cout << "\n\n";
+
+    for(const Chapter* const chapter : chapters)
+    {
+        chapter->print();
+    }
 }

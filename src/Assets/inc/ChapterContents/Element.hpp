@@ -19,8 +19,14 @@ class Element
 {
 public:
     /**
+     * @brief Destructor
+     * 
+     */
+    virtual ~Element() {}
+
+    /**
      * @brief Prints the element
      * 
      */
-    virtual void print();
+    virtual void print() const = 0;
 };

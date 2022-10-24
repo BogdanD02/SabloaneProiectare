@@ -23,12 +23,12 @@ class Book
 {
 private:
     std::string _title;
-    std::vector <Chapter> chapters;
-    std::vector <Author> authors;
+    std::vector <Chapter*> chapters;
+    std::vector <Author*> authors;
 
     TableOfContents* tableOfContents;
 
-    void printUnderlined(std::string message);
+    void printUnderlined(std::string message) const;
 
 public:
     /**
@@ -42,7 +42,7 @@ public:
      * @brief Adds a new Author to the book
      * 
      */
-    void addAuthor( const Author& );
+    void addAuthor( Author*& );
 
     /**
      * @brief Creates a new empty chapter
@@ -62,7 +62,7 @@ public:
      * @return Chapter* 
      * @retval NULL Invalid index
      */
-    Chapter* getChapter() const;
+    Chapter* getChapter( const unsigned& );
 
     /**
      * @brief Creates a new table of contents for this book
@@ -81,5 +81,5 @@ public:
      * @brief Prints the book's content
      * 
      */
-    void print();
+    void print() const;
 };
