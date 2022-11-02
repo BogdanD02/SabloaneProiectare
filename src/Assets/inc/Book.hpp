@@ -15,18 +15,15 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <BookContents/Chapter.hpp>
-#include <BookContents/TableOfContents.hpp>
+#include <BookContents/Section.hpp>
+#include <Elements/TableOfContents.hpp>
 #include <Author.hpp>
 
-class Book
+class Book : public Section
 {
 private:
     std::string _title;
-    std::vector <Chapter*> chapters;
     std::vector <Author*> authors;
-
-    TableOfContents* tableOfContents;
 
     void printUnderlined(std::string message) const;
 
@@ -43,39 +40,6 @@ public:
      * 
      */
     void addAuthor( Author*& );
-
-    /**
-     * @brief Creates a new empty chapter
-     * 
-     * @param name The name of the chapter
-     * 
-     * @return int 
-     * @retval The index of the chapter
-     */
-    int createChapter( const std::string& );
-
-    /**
-     * @brief Gets a chapter
-     * 
-     * @param index The index of the chapter
-     * 
-     * @return Chapter* 
-     * @retval NULL Invalid index
-     */
-    Chapter* getChapter( const unsigned& );
-
-    /**
-     * @brief Creates a new table of contents for this book
-     * 
-     */
-    void AddTableOfContents();
-
-    /**
-     * @brief Returns the table of contents
-     * 
-     * @return TableOfContents* 
-     */
-    TableOfContents* getTableOfContents() const;
 
     /**
      * @brief Prints the book's content

@@ -11,7 +11,7 @@
 
 #include <Book.hpp>
 
-Book::Book(std::string title)
+Book::Book(std::string title) : Section(title)
 {
     _title = title;
 }
@@ -32,31 +32,6 @@ void Book::addAuthor( Author*& author )
     authors.push_back(author);
 }
 
-int Book::createChapter( const std::string& name )
-{
-    chapters.push_back( new Chapter(name) );
-
-    return chapters.size() - 1;
-}
-
-Chapter* Book::getChapter( const unsigned& index )
-{
-    if(index < chapters.size())
-        return chapters.at(index);
-
-    return nullptr;
-}
-
-void Book::AddTableOfContents()
-{
-    tableOfContents = new TableOfContents(this);
-}
-
-TableOfContents* Book::getTableOfContents() const
-{
-    return tableOfContents;
-}
-
 void Book::print() const
 {
     printUnderlined(_title);
@@ -73,8 +48,5 @@ void Book::print() const
     }
     std::cout << "\n\n";
 
-    for(const Chapter* const chapter : chapters)
-    {
-        chapter->print();
-    }
+    Section::print();
 }

@@ -12,7 +12,9 @@
 #pragma once
 
 // Including dependencies
-#include <ChapterContents/Element.hpp>
+#include <Elements/Element.hpp>
+#include <iostream>
+#include <string>
 
 class Table : public Element
 {

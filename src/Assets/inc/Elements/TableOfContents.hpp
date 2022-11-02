@@ -13,16 +13,10 @@
 
 // Including dependencies
 #include <iostream>
-#include <Book.hpp>
+#include <Elements/Element.hpp>
 
-// Stub book
-class Book;
-
-class TableOfContents
+class TableOfContents : public Element
 {
-private:
-    const Book* book;
-
 public:
     /**
      * @brief Destructor
@@ -33,15 +27,11 @@ public:
     /**
      * @brief Constructor
      * 
-     * @param book The book containing the table of contents
      */
-    TableOfContents( Book* linkedBook) {
-        this->book = linkedBook;
-    }
+    TableOfContents() = default;
 
     // Block other forms of construction
 
-    TableOfContents() = delete;
     TableOfContents( const TableOfContents& ) = delete;
     TableOfContents* operator= ( const TableOfContents& ) = delete;
 

@@ -13,20 +13,34 @@
 
 // Including dependencies
 #include <string>
-#include <iostream>
 
 class Element
 {
+protected:
+    std::string name_;
+
 public:
     /**
      * @brief Destructor
      * 
      */
-    virtual ~Element() {}
+    virtual ~Element() = default;
 
     /**
      * @brief Prints the element
      * 
      */
     virtual void print() const = 0;
+
+    /**
+     * @brief Compares two elements
+     * 
+     * @param other The other element
+     * @return true 
+     * @return false 
+     */
+    bool operator== (const Element& other)
+    {
+        return name_ == other.name_;
+    }
 };

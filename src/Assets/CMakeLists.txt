@@ -1,10 +1,9 @@
 add_library(
     Assets OBJECT
 
-    src/Chapter.cpp
+    src/Section.cpp
     src/Image.cpp
     src/Paragraph.cpp
-    src/SubChapter.cpp
     src/Table.cpp
     src/Author.cpp
     src/Book.cpp

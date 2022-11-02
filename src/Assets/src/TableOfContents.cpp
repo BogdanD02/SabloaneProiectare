@@ -9,12 +9,7 @@
  * 
  */
 
-#include <BookContents/TableOfContents.hpp>
-
-TableOfContents::TableOfContents( Book* linkedBook )
-{
-    book = linkedBook;
-}
+#include <Elements/TableOfContents.hpp>
 
 void TableOfContents::print() const
 {
