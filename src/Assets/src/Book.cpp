@@ -32,6 +32,13 @@ void Book::addAuthor( Author*& author )
     authors.push_back(author);
 }
 
+void Book::accept(Visitor& visitor)
+{
+    visitor.visitBook(*this);
+
+    Section::accept(visitor);
+}
+
 void Book::print() const
 {
     printUnderlined(_title);

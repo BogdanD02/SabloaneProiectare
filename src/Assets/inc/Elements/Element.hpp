@@ -12,6 +12,7 @@
 #pragma once
 
 // Including dependencies
+#include <Engines/Visitor.hpp>
 #include <string>
 
 class Element
@@ -43,4 +44,6 @@ public:
     {
         return name_ == other.name_;
     }
+
+    virtual void accept(Visitor& visitor) = 0;
 };

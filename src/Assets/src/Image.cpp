@@ -20,3 +20,8 @@ void Image::print() const
 {
     std::cout << "Image : " << name << "\n";
 }
+
+void Image::accept(Visitor& visitor)
+{
+    visitor.visitImage(*this);
+}

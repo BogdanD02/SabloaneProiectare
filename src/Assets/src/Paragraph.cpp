@@ -20,3 +20,8 @@ void Paragraph::print() const
 {
     std::cout << "Paragraph : " << name << "\n";
 }
+
+void Paragraph::accept(Visitor& visitor)
+{
+    visitor.visitParagraph(*this);
+}

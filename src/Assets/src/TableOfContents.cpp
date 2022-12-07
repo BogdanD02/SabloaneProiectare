@@ -15,3 +15,8 @@ void TableOfContents::print() const
 {
     std::cout << "\nTable of contents\n";
 }
+
+void TableOfContents::accept(Visitor& visitor)
+{
+    visitor.visitTableOfContents(*this);
+}

@@ -52,4 +52,6 @@ public:
      * @return Element* 
      */
     Element* get ( const unsigned& ) const;
+
+    void accept(Visitor& visitor);
 };

@@ -7,6 +7,8 @@ add_library(
     src/Table.cpp
     src/Author.cpp
     src/Book.cpp
+    src/TableOfContents.cpp
+    src/BookStatistics.cpp
 )
 
 target_include_directories(

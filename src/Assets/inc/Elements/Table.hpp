@@ -48,4 +48,6 @@ public:
      * 
      */
     void print() const;
+
+    void accept(Visitor& visitor);
 };

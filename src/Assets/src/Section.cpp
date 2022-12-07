@@ -54,3 +54,13 @@ void Section::print() const
         element->print();
     }
 }
+
+void Section::accept(Visitor& visitor)
+{
+    visitor.visitSection(*this);
+
+    for (Element*& el : children_)
+    {
+        el->accept(visitor);
+    }
+}

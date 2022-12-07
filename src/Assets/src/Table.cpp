@@ -20,3 +20,8 @@ void Table::print() const
 {
     std::cout << "Table : " << name << "\n";
 }
+
+void Table::accept(Visitor& visitor)
+{
+    visitor.visitTable(*this);
+}
