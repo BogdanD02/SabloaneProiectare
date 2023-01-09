@@ -21,3 +21,6 @@ https://github.com/BogdanD02/SabloaneProiectare/tree/7b284ace947e036d8b4e6d7c702
 - all good
 
 Nota 10
+
+# Nota propusa:
+10
